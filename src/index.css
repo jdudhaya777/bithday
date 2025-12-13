@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Quicksand:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Ghibli-inspired magical palette */
+    --background: 30 50% 98%;
+    --foreground: 280 20% 25%;
+
+    --card: 30 40% 96%;
+    --card-foreground: 280 20% 25%;
+
+    --popover: 30 40% 96%;
+    --popover-foreground: 280 20% 25%;
+
+    /* Soft rose pink - romantic primary */
+    --primary: 340 65% 75%;
+    --primary-foreground: 340 80% 20%;
+
+    /* Warm cream - secondary */
+    --secondary: 35 60% 92%;
+    --secondary-foreground: 35 40% 30%;
+
+    /* Soft lavender mist */
+    --muted: 270 30% 92%;
+    --muted-foreground: 270 15% 45%;
+
+    /* Golden sparkle accent */
+    --accent: 45 90% 70%;
+    --accent-foreground: 45 80% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 340 30% 88%;
+    --input: 340 30% 88%;
+    --ring: 340 65% 75%;
+
+    --radius: 1rem;
+
+    /* Ghibli custom colors */
+    --ghibli-rose: 340 65% 75%;
+    --ghibli-rose-light: 340 70% 90%;
+    --ghibli-rose-dark: 340 50% 55%;
+    --ghibli-cream: 35 60% 95%;
+    --ghibli-lavender: 270 40% 85%;
+    --ghibli-lavender-dark: 260 35% 45%;
+    --ghibli-sage: 140 25% 75%;
+    --ghibli-sage-dark: 140 30% 35%;
+    --ghibli-gold: 45 90% 70%;
+    --ghibli-gold-glow: 45 100% 80%;
+    --ghibli-night: 240 40% 20%;
+    --ghibli-night-light: 240 30% 35%;
+    --ghibli-peach: 20 80% 85%;
+    --ghibli-sky: 200 60% 85%;
+    --ghibli-firefly: 55 100% 75%;
+
+    /* Gradients */
+    --gradient-sunrise: linear-gradient(180deg, hsl(270 40% 85%) 0%, hsl(340 70% 90%) 50%, hsl(35 60% 95%) 100%);
+    --gradient-night: linear-gradient(180deg, hsl(240 40% 15%) 0%, hsl(260 35% 30%) 50%, hsl(270 40% 45%) 100%);
+    --gradient-golden: linear-gradient(180deg, hsl(45 90% 70%) 0%, hsl(35 80% 75%) 50%, hsl(340 65% 75%) 100%);
+    --gradient-dreamy: linear-gradient(135deg, hsl(340 70% 90%) 0%, hsl(270 40% 85%) 50%, hsl(200 60% 85%) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(340 65% 75% / 0.4);
+    --shadow-gold: 0 0 30px hsl(45 90% 70% / 0.5);
+    --shadow-soft: 0 10px 40px hsl(270 40% 85% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 40% 8%;
+    --foreground: 30 50% 95%;
+
+    --card: 240 35% 12%;
+    --card-foreground: 30 50% 95%;
+
+    --popover: 240 35% 12%;
+    --popover-foreground: 30 50% 95%;
+
+    --primary: 340 65% 70%;
+    --primary-foreground: 340 80% 95%;
+
+    --secondary: 240 30% 20%;
+    --secondary-foreground: 30 50% 90%;
+
+    --muted: 240 25% 18%;
+    --muted-foreground: 270 20% 70%;
+
+    --accent: 45 80% 60%;
+    --accent-foreground: 45 90% 95%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 25% 25%;
+    --input: 240 25% 25%;
+    --ring: 340 65% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .ghibli-text-shadow {
+    text-shadow: 0 2px 20px hsl(var(--ghibli-rose) / 0.5);
+  }
+
+  .ghibli-glow {
+    filter: drop-shadow(0 0 20px hsl(var(--ghibli-gold) / 0.6));
+  }
+
+  .ghibli-section {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
+  }
+
+  .gradient-sunrise {
+    background: var(--gradient-sunrise);
+  }
+
+  .gradient-night {
+    background: var(--gradient-night);
+  }
+
+  .gradient-golden {
+    background: var(--gradient-golden);
+  }
+
+  .gradient-dreamy {
+    background: var(--gradient-dreamy);
+  }
+}
+
+@layer utilities {
+  /* Floating animation for petals */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px) rotate(90deg);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-10px) rotate(180deg);
+    }
+    75% {
+      transform: translateY(-30px) translateX(5px) rotate(270deg);
+    }
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) rotate(5deg);
+    }
+  }
+
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 10px hsl(var(--ghibli-gold) / 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 30px hsl(var(--ghibli-gold) / 0.9));
+    }
+  }
+
+  @keyframes drift {
+    0% {
+      transform: translateY(100vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(100px) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes firefly {
+    0%, 100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes envelope-open {
+    0% {
+      transform: rotateX(0deg);
+    }
+    100% {
+      transform: rotateX(-180deg);
+    }
+  }
+
+  @keyframes ring-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 20px hsl(var(--ghibli-gold) / 0.6)) drop-shadow(0 0 40px hsl(var(--ghibli-rose) / 0.4));
+    }
+    50% {
+      filter: drop-shadow(0 0 40px hsl(var(--ghibli-gold) / 0.9)) drop-shadow(0 0 60px hsl(var(--ghibli-rose) / 0.6));
+    }
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 6s ease-in-out infinite;
+  }
+
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-drift {
+    animation: drift 15s linear infinite;
+  }
+
+  .animate-firefly {
+    animation: firefly 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--ghibli-gold) / 0.3) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .animate-ring-glow {
+    animation: ring-glow 2s ease-in-out infinite;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--ghibli-cream));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--ghibli-rose));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--ghibli-rose-dark));
+  }
+}
